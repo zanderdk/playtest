@@ -1,0 +1,57 @@
+
+<div class="alert alert-success" id="ok">
+  <strong>succes!</strong> Køb gennemført 
+</div>
+<div class="alert alert-danger" id="error"></div>
+<form role="form" name="myForm" ng-submit="view.buy()">
+<div class="input-group">
+      
+      <input type="text" autocomplete="off" class="form-control" id="buy" name="buy" placeholder="bruger og nr">
+
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">Go</button>
+      </span>
+</form>
+    </div>
+<div class="col-xs-6">
+<h2 class="sub-header">Priser</h2>
+  <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="col-md-1">Nr</th>
+                  <th class="col-md-2">Navn</th>
+                  <th class="col-md-3">Pris</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr ng-repeat="pro in view.products" ng-if="$index%2===0 && pro.active">
+                      <td>{{pro.buyId}}</td>
+                      <td>{{pro.name}}</td>
+                      <td>{{pro.price}}</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+</div>
+  <div class="col-xs-6">
+      <h2 class="sub-header"></br></h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="col-md-1">Nr</th>
+                  <th class="col-md-2">Navn</th>
+                  <th class="col-md-3">Pris</th>                
+              </tr>
+              </thead>
+              <tbody>
+                  <tr ng-repeat="pro in view.products" ng-if="$index%2===1 && pro.active">
+                      <td>{{pro.buyId}}</td>
+                      <td>{{pro.name}}</td>
+                      <td>{{pro.price}}</td>                  
+                  </tr>
+             </tbody>
+            </table></div>
+    </div>
+

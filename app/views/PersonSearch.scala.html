@@ -1,0 +1,35 @@
+<br/>
+<input type="text" class="form-control"  ng-model="personList.search" class="search-query" id="personSearch" placeholder="Søg">
+
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Studie Nr</th>
+        <th>Brugernavn</th>
+        <th>Fornavn</th>
+        <th>Efternavn</th>
+        <th>Email</th>
+        <th>Penge</th>
+        <th>Aktiv</th>
+        <th>Admin</th>
+        <th><a href="#/add/"><span class="glyphicon glyphicon-plus"></a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="person in personList.persons | filter:personList.search | orderBy:'userName'">
+          <td>{{person.studieNo}}</td>
+          <td>{{person.userName}}</td>
+          <td>{{person.firstName}}</td>
+          <td>{{person.lastName}}</td>
+          <td>{{person.email}}</td>
+          <td>{{person.amount}}</td>
+          <td><input type="checkbox" ng-model="person.active" disabled="true"></input></td>
+          <td><input type="checkbox" ng-model="person.admin" disabled="true"></input></td>
+          <td>
+              <a href="#/edit/{{person.userName}}"><span class="glyphicon glyphicon-pencil"></a>
+          </td>
+      </tr>
+      </tbody>
+  </table>
+</div>

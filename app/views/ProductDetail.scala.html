@@ -1,0 +1,29 @@
+<form name="myForm">
+  <div class="control-group" ng-class="{error: myForm.name.$invalid && !myForm.name.$pristine}">
+    <label>Id</label>
+    <input type="number" value="0" class="form-control"  name="buyId" ng-model="view.product.buyId" required>
+    <span ng-show="myForm.buyId.$error.required && !myForm.buyId.$pristine" class="help-inline"> 
+        Id skal udfyldes.</br></span>
+    <label>Navn</label>
+    <input type="text" class="form-control"  name="name" ng-model="view.product.name" required>
+    <span ng-show="myForm.name.$error.required && !myForm.name.$pristine" class="help-inline"> 
+        Navn skal udfyldes.</br></span>
+    <span ng-show="myForm.name.$error.required && !myForm.name.$pristine" class="help-inline"></span>
+    <label>Pris</label>
+    <input type="number" min="0" max="10000" class="form-control"  name="price" ng-model="view.product.price" required>
+    <span ng-show="myForm.price.$error.required && !myForm.price.$pristine" class="help-inline"> 
+        Pris skal udfyldes.</br></span>
+    <label>Aktiv</label>
+    <input type="checkbox" name="active" ng-model="view.product.active" value="checked">
+  </div>
+
+  <div class="alert alert-danger" id="error"></div>
+
+ 
+  <br>
+  <a href="#/" class="btn btn-default">Anuller</a>
+  <button ng-click="view.save()" ng-disabled="myForm.$invalid"
+          class="btn btn-primary">Gem</button>
+  <button ng-click="view.delete()"
+          ng-show="view.edit" class="btn btn-danger">Slet</button>
+</form>

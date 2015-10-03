@@ -1,0 +1,4 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/home/zander/activator/play/conf/routes,/home/zander/activator/play/target/scala-2.11/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/home/zander/activator/play/conf/application.conf,/home/zander/activator/play/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/home/zander/activator/play/conf/logback.xml,/home/zander/activator/play/target/scala-2.11/classes/logback.xml)[0m

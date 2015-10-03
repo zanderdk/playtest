@@ -1,0 +1,27 @@
+<br/>
+<input type="text" class="form-control"  ng-model="view.search" class="search-query" id="productSearch" placeholder="Søg">
+
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Navn</th>
+        <th>Pris</th>
+        <th>Akriv</th>
+        <th><a href="#/add/"><span class="glyphicon glyphicon-plus"></a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="product in view.products | filter:view.search | orderBy:'Id'">
+          <td>{{product.buyId}}</td>
+          <td>{{product.name}}</td>
+          <td>{{product.price}}</td>
+          <td><input type="checkbox" ng-model="product.active" disabled="true"></input></td>
+          <td>
+              <a href="#/edit/{{product.buyId}}"><span class="glyphicon glyphicon-pencil"></a>
+          </td>
+      </tr>
+      </tbody>
+  </table>
+</div>

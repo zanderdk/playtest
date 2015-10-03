@@ -1,0 +1,14 @@
+@(tab: String)(content: Html)
+@page("Admin") {
+
+<ul class="nav nav-tabs">
+    @(Seq(("Person", "Personer"), ("Pay", "Indbetal"), ("Pro", "Produkter")).map( x =>
+  if(x._1 == tab) <li class="active"><a href={"/Admin"+x._1+"#/"}>{x._2}</a></li> else {
+        <li><a href={"/Admin"+x._1+"#/"}>{x._2}</a></li>
+    }
+  ))
+</ul>
+
+@content
+
+}

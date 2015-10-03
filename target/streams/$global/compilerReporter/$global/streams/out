@@ -1,0 +1,4 @@
+[0m[[31merror[0m] [0m/home/zander/Desktop/activator/play/conf/routes:19: missing arguments for method getProduct in class Application;[0m
+[0m[[31merror[0m] [0mfollow this method with `_' if you want to treat it as a partially applied function[0m
+[0m[[31merror[0m] [0mGET     /getProduct                 controllers.Application.getProduct[0m
+[0m[[31merror[0m] [0mone error found[0m

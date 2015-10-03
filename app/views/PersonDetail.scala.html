@@ -1,0 +1,46 @@
+<form name="myForm">
+  <div class="control-group" ng-class="{error: myForm.name.$invalid && !myForm.name.$pristine}">
+    <label>Studie Nr</label>
+    <input type="number" value="0" class="form-control"  name="studieNo" ng-model="editPerson.person.studieNo" required>
+    <span ng-show="myForm.studieNo.$error.required && !myForm.studieNo.$pristine" class="help-inline"> 
+        Studie Nr skal udfyldes.</br></span>
+    <label>Brugernavn</label>
+    <input type="text" class="form-control"  name="username" ng-model="editPerson.person.userName" required>
+    <span ng-show="myForm.username.$error.required && !myForm.username.$pristine" class="help-inline"> 
+        Brugernavn skal udfyldes.</br></span>
+    <label>Kode</label>
+    <input type="password" class="form-control"  name="password" id="password" required>
+    <span ng-show="myForm.password.$error.required && !myForm.password.$pristine" class="help-inline"> 
+        Password skal udfyldes.</br></span>
+    <label>Fornavn</label>
+    <input type="text" class="form-control"  name="firstName" ng-model="editPerson.person.firstName" required>
+    <span ng-show="myForm.firstName.$error.required && !myForm.firstName.$pristine" class="help-inline"> 
+        Fornavn skal udfyldes.</br></span>
+    <label>Efternavn</label>
+    <input type="text" class="form-control"  name="lastName" ng-model="editPerson.person.lastName" required>
+    <span ng-show="myForm.lastName.$error.required && !myForm.lastName.$pristine" class="help-inline"> 
+        Efternavn skal udfyldes.</br></span>
+    <label>Email</label>
+    <input type="text" class="form-control"  name="email" ng-model="editPerson.person.email" required>
+    <span ng-show="myForm.email.$error.required && !myForm.email.$pristine" class="help-inline"> 
+        Email skal udfyldes.</br></span>
+    <label>Penge</label>
+    <input type="number" value="0" class="form-control" min="0" max="100000"  name="amount" ng-model="editPerson.person.amount" required>
+    <span ng-show="myForm.amount.$error.required && !myForm.amount.$pristine" class="help-inline"> 
+        Penge skal udfyldes.</br></span>
+    <label>Aktiv</label>
+    <input type="checkbox" name="active" ng-model="editPerson.person.active" value="checked">
+    <label>Admin</label>
+    <input type="checkbox" name="admin" ng-model="editPerson.person.admin">
+  </div>
+
+  <div class="alert alert-danger" id="error"></div>
+
+ 
+  <br>
+  <a href="#/" class="btn btn-default">Anuller</a>
+  <button ng-click="editPerson.save()" ng-disabled="myForm.$invalid"
+          class="btn btn-primary">Gem</button>
+  <button ng-click="editPerson.delete()"
+          ng-show="editPerson.edit" class="btn btn-danger">Slet</button>
+</form>

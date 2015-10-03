@@ -1,0 +1,36 @@
+@(loginForm: Form[(String,String)])
+@import helper._
+@import play.api.Play.current
+@import play.api.i18n.Messages.Implicits._
+@page("Admin") {
+
+      <script src="@routes.Assets.at("js/admin.js")" type="text/javascript"></script>
+   
+      <form onsubmit="event.preventDefault();" id="form" >
+    <dl class=" " id="username_field">
+        <dt><label for="username">username</label></dt>
+            <dd>
+                <input type="text" id="username" name="username" value="" />
+            </dd>
+            <dd class="info">Required</dd>
+    </dl>
+    <dl class=" " id="password_field">
+        <dt><label for="password">password</label></dt>
+        <dd>
+            <input type="password" id="password" name="password" value="" />
+        </dd>
+        <dd class="info">Required</dd>
+    </dl>
+    <input type="submit" name="handleClick" id="handleClick" value="Login">
+</form>
+
+<form id="target" action="/login" method="post">
+    <input type="hidden" id="user" name="username" value="">
+    <input type="hidden" id="pass" name="password" value="">
+</form>
+
+<p><font color="red" id="error">no</font></p>
+        </div>
+      </div>
+
+}
